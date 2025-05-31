@@ -169,35 +169,34 @@ Step 8: End the program.
 ## PROGRAM
 ```
 #include <stdio.h>
-#include <string.h>
 
 int main() {
-    char str1[100], str2[100];
+    char c1[100], c2[100];
     int i = 0, flag = 0;
-    fgets(str1, sizeof(str1), stdin);
-    fgets(str2, sizeof(str2), stdin);
-    str1[strcspn(str1, "\n")] = '\0';
-    str2[strcspn(str2, "\n")] = '\0';
-    while (str1[i] != '\0' || str2[i] != '\0') {
-        if (str1[i] != str2[i]) {
+
+    scanf("%s", c1);
+    scanf("%s", c2);
+
+    while (c1[i] != '\0' && c2[i] != '\0') {
+        if (c1[i] != c2[i]) {
             flag = 1;
             break;
         }
         i++;
     }
-    if (flag == 0)
-        printf("Strings are equal.\n");
-    else
-        printf("Strings are not equal.\n");
+
+    if (flag == 0 && c1[i] == c2[i]) {
+        printf("Strings are same\n");
+    } else {
+        printf("Strings are not same\n");
+    }
 
     return 0;
 }
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/50398473-dff9-4325-a251-0c406766c40c)
-
-
+![image](https://github.com/user-attachments/assets/d74f1761-a96c-43fa-820a-1fd6167ffbf0)
 
 
 ## RESULT
