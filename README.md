@@ -169,33 +169,38 @@ Step 8: End the program.
 ## PROGRAM
 ```
 #include <stdio.h>
+#include <string.h>
+
 int main() {
-    char c1[100], c2[100];
-    int flag = 0, i = 0;
-    scanf("%[^\n]", c1);
-    getchar();
-    scanf("%s", c2);
-    while (c1[i] != '\0' && c2[i] != '\0') {
-        if (c1[i] != c2[i]) {
+    char str1[100], str2[100];
+    int i = 0, flag = 0;
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    str1[strcspn(str1, "\n")] = '\0';
+    str2[strcspn(str2, "\n")] = '\0';
+    while (str1[i] != '\0' || str2[i] != '\0') {
+        if (str1[i] != str2[i]) {
             flag = 1;
             break;
         }
         i++;
     }
-    if (c1[i] != '\0' || c2[i] != '\0') {
-        flag = 1;
-    }
-    if (flag == 0) {
-        printf("strings are same\n");
-    } else {
-        printf("strings are not same\n");
-    }
+
+    if (flag == 0)
+        printf("Strings are equal.\n");
+    else
+        printf("Strings are not equal.\n");
+
     return 0;
 }
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/8170de39-0798-426c-b99e-2088adfad5bd)
+![image](https://github.com/user-attachments/assets/d2511207-f058-4848-a665-772ce060b0c8)
+
 
 
 ## RESULT
