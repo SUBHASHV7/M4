@@ -174,11 +174,8 @@ Step 8: End the program.
 int main() {
     char str1[100], str2[100];
     int i = 0, flag = 0;
-    printf("Enter first string: ");
     fgets(str1, sizeof(str1), stdin);
-    printf("Enter second string: ");
     fgets(str2, sizeof(str2), stdin);
-
     str1[strcspn(str1, "\n")] = '\0';
     str2[strcspn(str2, "\n")] = '\0';
     while (str1[i] != '\0' || str2[i] != '\0') {
@@ -188,7 +185,6 @@ int main() {
         }
         i++;
     }
-
     if (flag == 0)
         printf("Strings are equal.\n");
     else
@@ -199,7 +195,8 @@ int main() {
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/d2511207-f058-4848-a665-772ce060b0c8)
+![image](https://github.com/user-attachments/assets/50398473-dff9-4325-a251-0c406766c40c)
+
 
 
 
